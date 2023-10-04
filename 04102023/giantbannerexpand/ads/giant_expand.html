@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Giant Expand</title>
+	<style type="text/css">
+		body{
+			margin: 0;
+			padding: 0;
+		}
+		.wrap__giant{
+			clear: both;
+			height: 600px;
+			z-index: 10;
+			position: absolute;
+			right:0;
+		}
+		#giant-container{
+			height: 600px;
+			width: 300px;
+			overflow: hidden;
+			position: absolute;
+			right:0;
+			-webkit-transition: all 250ms ease;
+			-moz-transition: all 250ms ease;
+			-o-transition: all 250ms ease;
+			transition: all 250ms ease;
+			margin-bottom: 20px;
+		}
+		.giant__stay{
+			position: absolute;
+			z-index: 2;
+			right: 0;
+			-webkit-transition: all 250ms ease;
+			-moz-transition: all 250ms ease;
+			-o-transition: all 250ms ease;
+			transition: all 250ms ease;
+		}
+		.giant__expand{
+			position: absolute;
+			top: 0;
+			right: 0;
+			z-index: 1;
+		}
+		
+		.giant__expand .cta-1 {
+			position: absolute;
+			left: 70px;
+			width: 315px;
+			height: 450px;
+			bottom: 0;
+		}
+		
+		.giant__expand .cta-2 {
+			position: absolute;
+			left: 385px;
+			width: 310px;
+			height: 450px;
+			bottom: 0;
+		}
+		
+		.giant__expand .cta-3 {
+			position: absolute;
+			left: 695px;
+			width: 315px;
+			height: 450px;
+			bottom: 0;
+		}
+
+		#giant-container:hover{
+			width: 1070px !important;
+		}
+		#giant-container:hover .giant__stay{
+			/*right: -300px !important;*/
+			display: none;
+			right: 0;
+		}
+		.giant__expand--link{
+			width: 1070px;
+			height: 600px;
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+	</style>
+</head>
+<body>
+	<!-- s: giant_expand -->
+	<div class="wrap__giant">
+		<div id="giant-container">
+			<div class="giant giant__stay">
+				<!-- <a href="#" target="_blank">
+					<img src="images/300x600.jpg" alt="">
+				</a> -->
+				<iframe src="images/300x600/index.html" width="300" height="600" frameborder="0" scrolling="no"></iframe>
+			</div>
+			<div class="giant giant__expand">
+				<img src="images/1070x600.jpg" alt="">
+				<a href="https://www.btn.co.id/Conventional/Product-Links/Produk-BTN/Program/Program/Program-Undian-e-Deposito" target="_blank" class="cta-1"></a>
+				<a href="https://www.btn.co.id/Conventional/Product-Links/Produk-BTN/Program/Program/Program-Undian-e-Deposito" target="_blank" class="cta-2"></a>
+				<a href="https://www.btn.co.id/Conventional/Product-Links/Produk-BTN/Program/Program/Program-Undian-e-Deposito" target="_blank" class="cta-3"></a>
+			</div>
+		</div>
+	</div>
+	<!-- e: giant_expand -->
+
+	<div class="clearit"></div>
+	
+	<script type="text/javascript">
+		var giant = document.getElementById("giant-container");
+
+		if(top!=self){ window.frameElement.style = 'width:300px;height:600px; position:absolute; right:0;'};
+
+			giant.addEventListener("mouseover", function() {
+			if(top!=self){ window.frameElement.style.width = '1070px'; }
+				//giant.frameElement.style = "width:1070px";
+			});
+
+			giant.addEventListener("mouseout", function() {
+			if(top!=self){ window.frameElement.style.width = '300px'; }
+				//giant.frameElement.style = "width:300px";
+			});
+
+			// // var f = document.getElementById('big_iframe');
+			// // f.src = f.src;
+	</script>
+</body>
+</html>
